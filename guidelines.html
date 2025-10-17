@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orientações - BioTrack 2.0</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-custom text-custom antialiased">
+    <div id="app-container" class="flex flex-col h-screen">
+        <header id="main-header" class="card-custom shadow-md p-3 flex justify-between items-center w-full z-20 flex-shrink-0 border-b border-custom"></header>
+        <div class="flex flex-1 overflow-hidden">
+            <aside id="main-sidebar" class="w-20 lg:w-64 card-custom shadow-lg flex flex-col flex-shrink-0 transition-all duration-300"></aside>
+
+            <main class="flex-1 p-6 overflow-y-auto bg-custom">
+                <div id="guidelines" class="page">
+                    <h2 class="text-3xl font-bold text-custom mb-6">Orientações e Documentos</h2>
+                    <div class="max-w-4xl mx-auto space-y-8">
+                        <div class="card-custom p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-custom mb-4">Preparo para Exames</h3>
+                            <div class="space-y-4">
+                                <details class="border-b border-custom pb-2">
+                                    <summary class="cursor-pointer font-semibold">Exame de Glicemia de Jejum</summary>
+                                    <p class="mt-2 text-gray-500 dark:text-gray-400">É necessário jejum de 8 a 12 horas. Água é permitida. Não ingerir bebidas alcoólicas nas 72 horas que antecedem o exame.</p>
+                                </details>
+                                <details class="border-b border-custom pb-2">
+                                    <summary class="cursor-pointer font-semibold">Coleta de Urina (Tipo I)</summary>
+                                    <p class="mt-2 text-gray-500 dark:text-gray-400">Realizar a higiene da região genital. Desprezar o primeiro jato de urina e coletar o jato médio no frasco estéril fornecido pelo laboratório.</p>
+                                </details>
+                            </div>
+                        </div>
+                        <div class="card-custom p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-custom mb-4">Documentos Importantes</h3>
+                            <ul class="space-y-3">
+                                <li><a href="#" class="text-blue-500 hover:underline flex items-center"><i class="fas fa-file-pdf mr-2"></i>Termo de Consentimento</a></li>
+                                <li><a href="#" class="text-blue-500 hover:underline flex items-center"><i class="fas fa-file-pdf mr-2"></i>Política de Privacidade de Dados</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    </body>
+</html>

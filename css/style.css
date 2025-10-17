@@ -1,0 +1,38 @@
+body {
+    font-family: 'Inter', sans-serif;
+    --bg-light: #f1f5f9;
+    --bg-dark: #1e293b;
+    --text-light: #0f172a;
+    --text-dark: #e2e8f0;
+    --card-bg-light: #ffffff;
+    --card-bg-dark: #2a3a50;
+    --border-light: #e2e8f0;
+    --border-dark: #475569;
+}
+.dark body {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+}
+.bg-custom { background-color: var(--bg-light); }
+.dark .bg-custom { background-color: var(--bg-dark); }
+.card-custom { background-color: var(--card-bg-light); }
+.dark .card-custom { background-color: var(--card-bg-dark); }
+.text-custom { color: var(--text-light); }
+.dark .text-custom { color: var(--text-dark); }
+.border-custom { border-color: var(--border-light); }
+.dark .border-custom { border-color: var(--border-dark); }
+
+.sidebar-icon { transition: all 0.3s ease; }
+.sidebar-link:hover .sidebar-icon { transform: scale(1.1); }
+.modal-backdrop { background-color: rgba(0, 0, 0, 0.7); }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+.dark ::webkit-scrollbar-track { background: #2a3a50; }
+::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
+.dark ::webkit-scrollbar-thumb { background: #555; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
+.logo-dna-leaf { width: 40px; height: 40px; }
+
+/* Estilo do toggle de Dark Mode */
+.toggle-checkbox:checked { right: 0; border-color: #4ade80; }
+.toggle-checkbox:checked + .toggle-label { background-color: #4ade80; }

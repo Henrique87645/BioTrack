@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Resultados - BioTrack 2.0</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-custom text-custom antialiased">
+    <div id="app-container" class="flex flex-col h-screen">
+        <header id="main-header" class="card-custom shadow-md p-3 flex justify-between items-center w-full z-20 flex-shrink-0 border-b border-custom"></header>
+        <div class="flex flex-1 overflow-hidden">
+            <aside id="main-sidebar" class="w-20 lg:w-64 card-custom shadow-lg flex flex-col flex-shrink-0 transition-all duration-300"></aside>
+
+            <main class="flex-1 p-6 overflow-y-auto bg-custom">
+                <div id="results" class="page">
+                    <h2 class="text-3xl font-bold text-custom mb-6">Meus Resultados</h2>
+                    
+                    <div class="card-custom p-6 rounded-lg shadow-md overflow-x-auto">
+                        <table class="w-full text-left text-sm">
+                            <thead class="border-b border-custom">
+                                <tr>
+                                    <th class="p-3">Data da Coleta</th>
+                                    <th class="p-3">Nome do Exame</th>
+                                    <th class="p-3">Status</th>
+                                    <th class="p-3 text-right">Ação</th>
+                                </tr>
+                            </thead>
+                            <tbody id="resultsTableBody">
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/results.js"></script>
+</body>
+</html>

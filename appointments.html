@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamentos - BioTrack 2.0</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body class="bg-custom text-custom antialiased">
+    <div id="app-container" class="flex flex-col h-screen">
+        <header id="main-header" class="card-custom shadow-md p-3 flex justify-between items-center w-full z-20 flex-shrink-0 border-b border-custom"></header>
+        <div class="flex flex-1 overflow-hidden">
+            <aside id="main-sidebar" class="w-20 lg:w-64 card-custom shadow-lg flex flex-col flex-shrink-0 transition-all duration-300"></aside>
+
+            <main class="flex-1 p-6 overflow-y-auto bg-custom">
+                <div id="appointments" class="page">
+                    <h2 class="text-3xl font-bold text-custom mb-6">Agendamento de Pré-Consulta</h2>
+                    
+                    <div class="card-custom p-8 rounded-lg shadow-md max-w-3xl mx-auto">
+                        <form id="appointmentForm">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-4">
+                                    <div>
+                                        <label for="appointmentDate" class="block text-sm font-medium text-gray-400">Data da Consulta</label>
+                                        <input type="date" id="appointmentDate" class="w-full mt-1 px-3 py-2 border border-custom rounded-lg bg-custom text-custom focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                                    </div>
+                                    <div>
+                                        <label for="weight" class="block text-sm font-medium text-gray-400">Peso (kg)</label>
+                                        <input type="number" id="weight" step="0.1" placeholder="Ex: 70.5" class="w-full mt-1 px-3 py-2 border border-custom rounded-lg bg-custom text-custom focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                     <div>
+                                        <label for="height" class="block text-sm font-medium text-gray-400">Altura (cm)</label>
+                                        <input type="number" id="height" placeholder="Ex: 175" class="w-full mt-1 px-3 py-2 border border-custom rounded-lg bg-custom text-custom focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                                    </div>
+                                    <div>
+                                        <label for="bloodType" class="block text-sm font-medium text-gray-400">Tipo Sanguíneo</label>
+                                        <select id="bloodType" class="w-full mt-1 px-3 py-2 border border-custom rounded-lg bg-custom text-custom" required>
+                                            <option value="" disabled selected>Selecione...</option>
+                                            <option value="A+">A+</option><option value="A-">A-</option><option value="B+">B+</option><option value="B-">B-</option><option value="AB+">AB+</option><option value="AB-">AB-</option><option value="O+">O+</option><option value="O-">O-</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex justify-end mt-8">
+                                <button type="submit" class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300">
+                                    <i class="fas fa-calendar-check mr-2"></i>Agendar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="mt-10 card-custom p-6 rounded-lg shadow-md overflow-x-auto">
+                        <h3 class="text-xl font-bold text-custom mb-4">Meus Agendamentos</h3>
+                        <table class="w-full text-left text-sm">
+                            <thead class="border-b border-custom">
+                                <tr>
+                                    <th class="p-2">Data</th><th class="p-2">IMC</th><th class="p-2">Peso</th><th class="p-2">Altura</th><th class="p-2">Tipo Sanguíneo</th><th class="p-2 text-right">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="appointmentsTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div id="confirmationModal" class="fixed inset-0 flex items-center justify-center hidden modal-backdrop z-40">
+        <div class="card-custom rounded-lg shadow-xl p-8 w-full max-w-md">
+            <h3 id="confirmationTitle" class="text-xl font-bold mb-4 text-custom">Confirmar Ação</h3>
+            <p id="confirmationMessage" class="text-gray-500 dark:text-gray-400 mb-6">Você tem certeza que deseja prosseguir com esta ação?</p>
+            <div class="flex justify-end space-x-4">
+                <button id="cancelButton" class="px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600">Cancelar</button>
+                <button id="confirmButton" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="js/appointments.js"></script>
+</body>
+</html>

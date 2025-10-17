@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>BioTrack 2.0</title>
+    <script>
+        // Redireciona para a página de login ou dashboard
+        if (localStorage.getItem('currentUser')) {
+            window.location.href = 'dashboard.html';
+        } else {
+            window.location.href = 'login.html';
+        }
+    </script>
+</head>
+<body>
+    <p>Redirecionando...</p>
+</body>
+</html>

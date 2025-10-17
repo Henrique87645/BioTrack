@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil - BioTrack 2.0</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-custom text-custom antialiased">
+    <div id="app-container" class="flex flex-col h-screen">
+        <header id="main-header" class="card-custom shadow-md p-3 flex justify-between items-center w-full z-20 flex-shrink-0 border-b border-custom"></header>
+        <div class="flex flex-1 overflow-hidden">
+            <aside id="main-sidebar" class="w-20 lg:w-64 card-custom shadow-lg flex flex-col flex-shrink-0 transition-all duration-300"></aside>
+
+            <main class="flex-1 p-6 overflow-y-auto bg-custom">
+                <div id="profile" class="page">
+                    <h2 class="text-3xl font-bold text-custom mb-6">Meu Perfil</h2>
+                    <div class="card-custom p-8 rounded-lg shadow-md max-w-3xl mx-auto">
+                        <form id="profileForm">
+                            <div class="flex items-center space-x-6 mb-8">
+                                <div class="relative">
+                                    <img id="profileAvatar" class="h-24 w-24 rounded-full object-cover border-4 border-gray-300 dark:border-gray-500" src="https://placehold.co/100x100/A0A0A0/FFFFFF?text=CS" alt="Avatar">
+                                    <label for="avatarUpload" class="absolute bottom-0 right-0 bg-green-600 rounded-full h-8 w-8 flex items-center justify-center cursor-pointer hover:bg-green-700">
+                                        <i class="fas fa-camera text-white"></i>
+                                        <input type="file" id="avatarUpload" class="hidden" accept="image/*">
+                                    </label>
+                                </div>
+                                <div>
+                                    <h3 id="profileFullNameDisplay" class="text-2xl font-bold text-custom"></h3>
+                                    <p id="profileRoleDisplay" class="text-md text-gray-500 dark:text-gray-400"></p>
+                                </div>
+                            </div>
+                            
+                            <div class="border-t border-custom pt-6">
+                                <h4 class="text-lg font-semibold mb-4">Informações Pessoais e de Contato</h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="fullName" class="block text-sm font-medium text-gray-400">Nome Completo</label>
+                                        <input type="text" id="fullName" class="w-full mt-1 px-3 py-2 border border-custom rounded-lg bg-custom text-custom focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                                    </div>
+                                    <div>
+                                        <label for="dateOfBirth" class="block text-sm font-medium text-gray-400">Data de Nascimento</label>
+                                        <input type="date" id="dateOfBirth" class="w-full mt-1 px-3 py-2 border border-custom rounded-lg bg-custom text-custom focus:outline-none focus:ring-2 focus:ring-green-500">
+                                    </div>
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium text-gray-400">E-mail</label>
+                                        <input type="email" id="email" placeholder="seuemail@exemplo.com" class="w-full mt-1 px-3 py-2 border border-custom rounded-lg bg-custom text-custom focus:outline-none focus:ring-2 focus:ring-green-500">
+                                    </div>
+                                    <div>
+                                        <label for="phone" class="block text-sm font-medium text-gray-400">Telefone</label>
+                                        <input type="tel" id="phone" placeholder="(XX) XXXXX-XXXX" class="w-full mt-1 px-3 py-2 border border-custom rounded-lg bg-custom text-custom focus:outline-none focus:ring-2 focus:ring-green-500">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                             <div class="border-t border-custom pt-6 mt-6">
+                                <h4 class="text-lg font-semibold mb-4">Alterar Senha</h4>
+                                <div class="max-w-sm">
+                                    <label for="newPassword" class="block text-sm font-medium text-gray-400">Nova Senha</label>
+                                    <input type="password" id="newPassword" placeholder="Deixe em branco para não alterar" class="w-full mt-1 px-3 py-2 border border-custom rounded-lg bg-custom text-custom focus:outline-none focus:ring-2 focus:ring-green-500">
+                                </div>
+                            </div>
+
+                            <div class="flex justify-end mt-8">
+                                <button type="submit" class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300">
+                                    <i class="fas fa-save mr-2"></i>Salvar Alterações
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

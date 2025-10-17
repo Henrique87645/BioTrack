@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Histórico de Saúde - BioTrack 2.0</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-custom text-custom antialiased">
+    <div id="app-container" class="flex flex-col h-screen">
+        <header id="main-header" class="card-custom shadow-md p-3 flex justify-between items-center w-full z-20 flex-shrink-0 border-b border-custom"></header>
+        <div class="flex flex-1 overflow-hidden">
+            <aside id="main-sidebar" class="w-20 lg:w-64 card-custom shadow-lg flex flex-col flex-shrink-0 transition-all duration-300"></aside>
+
+            <main class="flex-1 p-6 overflow-y-auto bg-custom">
+                <div id="health-history" class="page">
+                    <h2 class="text-3xl font-bold text-custom mb-6">Meu Histórico de Saúde</h2>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <div class="lg:col-span-2 card-custom p-6 rounded-lg shadow-md">
+                            <h3 class="text-lg font-semibold text-custom mb-4">Evolução de Peso e IMC</h3>
+                            <canvas id="healthChart"></canvas>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="card-custom p-6 rounded-lg shadow-md text-center">
+                                <h4 class="text-sm font-medium text-gray-400">Tipo Sanguíneo</h4>
+                                <p id="bloodTypeDisplay" class="text-3xl font-bold text-green-500 mt-2">-</p>
+                            </div>
+                            <div class="card-custom p-6 rounded-lg shadow-md text-center">
+                                 <h4 class="text-sm font-medium text-gray-400">Último IMC Registrado</h4>
+                                <p id="lastImcDisplay" class="text-3xl font-bold text-custom mt-2">-</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/health-history.js"></script>
+</body>
+</html>

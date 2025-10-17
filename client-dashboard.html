@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início - BioTrack 2.0</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-custom text-custom antialiased">
+    <div id="app-container" class="flex flex-col h-screen">
+        <header id="main-header" class="card-custom shadow-md p-3 flex justify-between items-center w-full z-20 flex-shrink-0 border-b border-custom"></header>
+        <div class="flex flex-1 overflow-hidden">
+            <aside id="main-sidebar" class="w-20 lg:w-64 card-custom shadow-lg flex flex-col flex-shrink-0 transition-all duration-300"></aside>
+
+            <main class="flex-1 p-6 overflow-y-auto bg-custom">
+                <div id="client-dashboard" class="page">
+                    <h2 id="welcomeMessage" class="text-3xl font-bold text-custom mb-6"></h2>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <div class="lg:col-span-2 space-y-6">
+                             <h3 class="text-xl font-semibold text-custom">Notícias e Dicas de Saúde</h3>
+                             <div id="health-news-container" class="space-y-6">
+                                 </div>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <h3 class="text-xl font-semibold text-custom">Resumo Rápido</h3>
+                            <div class="card-custom p-6 rounded-lg shadow-md">
+                                <h4 class="font-semibold text-custom flex items-center">
+                                    <i class="fas fa-calendar-check text-blue-500 mr-3"></i>
+                                    Próxima Consulta
+                                </h4>
+                                <p id="nextAppointment" class="text-gray-500 dark:text-gray-400 mt-2">Nenhuma consulta agendada.</p>
+                            </div>
+                            <div class="card-custom p-6 rounded-lg shadow-md">
+                                <h4 class="font-semibold text-custom flex items-center">
+                                    <i class="fas fa-vial text-green-500 mr-3"></i>
+                                    Último Resultado
+                                </h4>
+                                <p id="lastResult" class="text-gray-500 dark:text-gray-400 mt-2">Nenhum resultado disponível.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/client-dashboard.js"></script>
+</body>
+</html>

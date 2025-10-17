@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - BioTrack 2.0</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body class="bg-gray-200 flex items-center justify-center h-screen">
+
+    <div id="auth-container" class="w-full max-w-md bg-white rounded-lg shadow-xl p-8">
+        <div class="flex items-center justify-center mb-6">
+            <svg class="logo-dna-leaf text-green-600 h-12 w-12" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M60,10 C40,30 40,70 60,90" stroke="currentColor" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M40,10 C60,30 60,70 40,90" stroke="currentColor" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M50,10 C55,30 45,30 50,50 C45,70 55,70 50,90" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="5,5"/><path d="M50,2 C70,20 85,40 50,50 C15,40 30,20 50,2" fill="currentColor" opacity="0.4"/></svg>
+            <h1 class="text-3xl font-bold text-gray-800 ml-2">BioTrack 2.0</h1>
+        </div>
+        
+        <form id="login-form">
+            <h2 class="text-2xl font-bold text-center text-gray-700 mb-4">Login</h2>
+            <div id="login-error" class="text-red-500 text-center mb-4 hidden">Usuário ou senha inválidos.</div>
+            <div class="mb-4">
+                <label class="block text-gray-700">Usuário</label>
+                <input type="text" id="login-username" class="w-full px-3 py-2 border rounded-lg text-gray-800" required value="mcurie">
+            </div>
+            <div class="mb-6 relative">
+                <label for="login-password" class="block text-gray-700">Senha</label>
+                <input type="password" id="login-password" class="w-full px-3 py-2 border rounded-lg text-gray-800 pr-10" required value="password123">
+                <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 top-6 flex items-center px-3 text-gray-600">
+                    <i class="fas fa-eye"></i>
+                </button>
+            </div>
+            <button type="submit" class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition duration-300">Entrar</button>
+            <p class="text-center text-sm text-gray-600 mt-4">Não tem uma conta? <a href="#" id="show-register" class="text-green-600 hover:underline">Cadastre-se</a></p>
+        </form>
+
+        <form id="register-form" class="hidden">
+             <h2 class="text-2xl font-bold text-center text-gray-700 mb-4">Cadastro</h2>
+             <input type="text" id="register-fullname" placeholder="Nome Completo" class="w-full px-3 py-2 mb-4 border rounded-lg text-gray-800" required>
+             <input type="text" id="register-username" placeholder="Nome de Usuário" class="w-full px-3 py-2 mb-4 border rounded-lg text-gray-800" required>
+             <input type="password" id="register-password" placeholder="Senha" class="w-full px-3 py-2 mb-4 border rounded-lg text-gray-800" required>
+            <button type="submit" class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition duration-300">Cadastrar</button>
+            <p class="text-center text-sm text-gray-600 mt-4">Já tem uma conta? <a href="#" id="show-login" class="text-green-600 hover:underline">Faça o login</a></p>
+        </form>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>

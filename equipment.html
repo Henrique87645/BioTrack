@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipamentos - BioTrack 2.0</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-custom text-custom antialiased">
+    <div id="app-container" class="flex flex-col h-screen">
+        <header id="main-header" class="card-custom shadow-md p-3 flex justify-between items-center w-full z-20 flex-shrink-0 border-b border-custom"></header>
+        <div class="flex flex-1 overflow-hidden">
+            <aside id="main-sidebar" class="w-20 lg:w-64 card-custom shadow-lg flex flex-col flex-shrink-0 transition-all duration-300"></aside>
+
+            <main class="flex-1 p-6 overflow-y-auto bg-custom">
+                 <div id="equipment" class="page">
+                     <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-3xl font-bold text-custom">Equipamentos</h2>
+                        <button id="addEquipmentBtn" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700"><i class="fas fa-plus mr-2"></i>Novo</button>
+                    </div>
+                    <div class="card-custom p-6 rounded-lg shadow-md overflow-x-auto">
+                        <table class="w-full text-left text-sm"><thead class="border-b border-custom"><tr><th class="p-2">Equipamento</th><th class="p-2">Status</th><th class="p-2">Próxima Manutenção</th><th class="p-2 text-right">Ações</th></tr></thead><tbody id="equipmentTableBody"></tbody></table>
+                    </div>
+                    <div id="usage-log-container" class="mt-8">
+                         <h3 class="text-2xl font-bold text-custom mb-4">Log de Utilização</h3>
+                         <div class="card-custom p-4 rounded-lg shadow-md max-h-60 overflow-y-auto"><ul id="usageLogList" class="text-sm space-y-2"></ul></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <div id="equipmentModal" class="fixed inset-0 flex items-center justify-center hidden modal-backdrop z-30">
+        <div class="card-custom rounded-lg shadow-xl p-8 w-full max-w-md">
+            <h3 class="text-2xl font-bold mb-4 text-custom">Adicionar/Editar Equipamento</h3>
+            <form id="equipmentForm">
+                <div class="space-y-4">
+                    <input type="text" id="equipmentName" placeholder="Nome do Equipamento" class="w-full px-3 py-2 border border-custom rounded-lg bg-custom text-custom" required>
+                    <input type="text" id="equipmentLocation" placeholder="Localização" class="w-full px-3 py-2 border border-custom rounded-lg bg-custom text-custom" required>
+                    <div>
+                        <label class="text-xs text-gray-400">Próxima Manutenção</label>
+                        <input type="date" id="equipmentMaintenance" class="w-full px-3 py-2 border border-custom rounded-lg bg-custom text-custom">
+                    </div>
+                </div>
+                <div class="flex justify-end space-x-4 mt-6">
+                    <button type="button" class="close-modal-btn px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600">Cancelar</button>
+                    <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="reportProblemModal" class="fixed inset-0 flex items-center justify-center hidden modal-backdrop z-40">
+        <div class="card-custom rounded-lg shadow-xl p-8 w-full max-w-md">
+            <h3 class="text-2xl font-bold mb-4 text-custom">Reportar Problema</h3>
+            <form id="reportProblemForm">
+                <p class="mb-2 text-sm">Equipamento: <span id="report-equipment-name" class="font-semibold"></span></p>
+                <textarea id="problem-description" rows="4" class="w-full p-2 border border-custom rounded-lg bg-custom text-custom" placeholder="Descreva o problema encontrado..." required></textarea>
+                <div class="flex justify-end space-x-4 mt-4">
+                     <button type="button" class="close-modal-btn px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600">Cancelar</button>
+                    <button type="submit" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Enviar Reporte</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/equipment.js"></script>
+</body>
+</html>
